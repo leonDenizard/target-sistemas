@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>4) Dado o valor de faturamento mensal de uma distribuidora, detalhado por estado:</h1>
+        
+        <ul>
+            <li>SP – R$67.836,43</li>
+            <li>RJ – R$36.678,66</li>
+            <li>MG – R$29.229,88</li>
+            <li>ES – R$27.165,48</li>
+            <li>Outros – R$19.849,53</li>
+        </ul>
+
+        <h4>Escreva um programa na linguagem que desejar onde calcule o percentual de representação que cada estado teve dentro do valor total mensal da distribuidora.</h4>
+        <h3>Result in console of browser</h3>
+
+        <script>
+
+            const faturamentoTotal= {
+                SP: 67836.43,
+                RJ: 36678.66,
+                MG: 29229.88,
+                ES: 27165.48,
+                Outros: 19849.53
+            }
+
+            
+            //soma todos os valores
+            const valorTotal = Object.values(faturamentoTotal).reduce((acumalator, valor) =>{
+                return (acumalator + valor)
+            }, 0)
+
+            const porcentagens = {}
+            for( let [estado, valor] of Object.entries(faturamentoTotal)){
+                // console.log(estado, valor)
+
+                const porcentagemPorEstado = (valor / valorTotal) * 100
+                porcentagens[estado] = porcentagemPorEstado;
+
+                // console.log(porcentagens)
+
+            }
+            // console.log(valorTotal)
+            
+            for(let [estado, valor] of Object.entries(porcentagens)){
+                
+                console.log(`Porcentagem no estado: ${estado} é: ${valor.toFixed(2)} %`)
+            }
+        </script>
+    </body>
+</html>

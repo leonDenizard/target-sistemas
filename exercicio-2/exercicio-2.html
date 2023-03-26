@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>2) Dado a sequência de Fibonacci, onde se inicia por 0 e 1 e o próximo valor sempre será a soma dos 2 valores anteriores (exemplo: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...), escreva um programa na linguagem que desejar onde, informado um número, ele calcule a sequência de Fibonacci e retorne uma mensagem avisando se o número informado pertence ou não a sequência.</h1>
+
+        <h2>IMPORTANTE:</h2>
+
+        <p>Esse número pode ser informado através de qualquer entrada de sua preferência ou pode ser previamente definido no código;</p>
+        <h3>Result in console of browser</h3>
+        <script>
+
+            let number = parseInt(prompt("Informe um número inteiro e positivo: "))
+
+            function fibonacci(){
+
+                let a = 0
+                let b = 1
+                let c
+
+                while(b < number){
+                    
+                    c = a + b
+                    a = b
+                    b = c
+                }
+
+                if (b === number) {
+                    console.log(`${number} pertence à sequência de Fibonacci.`);
+                    } else {
+                    console.log(`${number} não pertence à sequência de Fibonacci.`);
+                }
+            }
+
+            fibonacci()
+        </script>
+    </body>
+</html>
